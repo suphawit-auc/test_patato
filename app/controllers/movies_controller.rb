@@ -6,7 +6,12 @@ class MoviesController < ApplicationController
     end
 
     def show
-        @movie = Movie.find(params[:id])
+        begin
+            @movie = Movie.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+            flash[:notice] = " No movie with the given ID could be found."
+            redirect_to action:"index"
+        end
     end
 
     def new
