@@ -64,3 +64,6 @@ html, body {
     text-decoration: none;
     font-size: xx-large;
   }
+  tr:hover {
+    background-color: yellow;
+  }
