@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
     end
 
     def show
-        @movie = Movie.where(:id => params[:id])[0]
+        @movie = Movie.find(params[:id])
     end
 
     def new
@@ -13,11 +13,11 @@ class MoviesController < ApplicationController
     def create
         params.require(:movie)
         new_movie  = params[:movie].permit(:title,:rating,:release_date)
-        puts new_movie
+        # puts new_movie
         @movie = Movie.create!(new_movie)
         
         flash[:notice] = "#{@movie.title} was successfully created."
-        redirect_to movies_path
+        redirect_to movie_path(@movie)
     end
     
     def edit
