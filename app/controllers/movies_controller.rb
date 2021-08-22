@@ -1,7 +1,8 @@
 class MoviesController < ApplicationController
     def index
         # @movies = Movie.all()
-        @movies = Movie.order("title ASC")
+        # @movies = Movie.order("title ASC")
+        @movies = Movie.all().sort_by{|mov| mov.title}
     end
 
     def show
