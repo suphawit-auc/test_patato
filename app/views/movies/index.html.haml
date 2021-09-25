@@ -9,9 +9,9 @@
             %th Release Date
             %th More Info
         %tbody
-            -@movies.each_with_index do |movie|
+            -@movies.each_with_index do |movie,index|
                 %tr
-                %td= movie.id
+                %td= index+1
                 %td= movie.title 
                 %td= movie.rating
                 %td= movie.release_date
