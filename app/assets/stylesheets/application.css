@@ -1,5 +1,8 @@
 html, body {
-    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 0;
+    margin-right: 8%;
+    margin-left: 8%;
     padding: 0;
     background: White;
     color: DarkSlateGrey;
@@ -7,7 +10,8 @@ html, body {
     font-size: 10pt;
   }
   div#main {
-    margin: 0;
+    border-style: ridge;
+    margin: 10;
     padding: 0 20px 20px;
   }
   a {
@@ -17,7 +21,7 @@ html, body {
     font-weight: bold;
   }
   h1 {
-    color: maroon;
+    color: maroon;s
     font-size: 150%;
     font-style: italic;
     display: block;
@@ -58,8 +62,10 @@ html, body {
     line-height: 25px;
     font-weight: bold;
     color: maroon;
+    
   }
   h2#banner a{
+    
     color: red;
     text-decoration: none;
     font-size: xx-large;
