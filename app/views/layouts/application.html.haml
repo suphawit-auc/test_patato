@@ -9,6 +9,8 @@
   %body
     %h2#banner
       = link_to 'RottenPotatoes' , movies_path()
+      
+    = render :partial => 'sessions/login_form'
     - if flash[:notice]
       #notice.message= flash[:notice]
     - elsif flash[:warning]
