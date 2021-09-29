@@ -1,6 +1,7 @@
 -# in app/views/movies/show.html.haml
 
-%h1  #{@movie.title} (#{@movie.release_date.strftime("%Y")})  #{link_to 'Edit', edit_movie_path(@movie), style: "font-size:14px" }
+%h1  #{@movie.title} (#{@movie.release_date.strftime("%Y")})  #{link_to 'Edit', edit_movie_path(@movie), style: "font-size:14px"}
+
 %ul#detailss
   %li
     Rating:

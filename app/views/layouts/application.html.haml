@@ -7,13 +7,20 @@
     = csrf_meta_tags
 
   %body
-    %h2#banner
-      = link_to 'RottenPotatoes' , movies_path()
-      
-    = render :partial => 'sessions/login_form'
-    - if flash[:notice]
-      #notice.message= flash[:notice]
-    - elsif flash[:warning]
-      #warning.message= flash[:warning]
-    #main
-      = yield
+    %table
+      %tr
+        %th
+          %h2#banner
+            = link_to 'RottenPotatoes' , movies_path()
+        %th
+          %h3#banner2
+          = render :partial => 'sessions/login_form'
+      %tr
+        %th{:colspan => 2}
+          - if flash[:notice]
+            #notice.message= flash[:notice]
+          - elsif flash[:warning]
+            #warning.message= flash[:warning]
+      %tr
+        %th#main{:colspan => 2}
+          = yield
