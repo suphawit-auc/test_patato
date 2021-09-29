@@ -17,14 +17,18 @@ class MoviesController < ApplicationController
     def new
         @movie = Movie.new()
     end
+
     def create
         params.require(:movie)
         new_movie  = params[:movie].permit(:title,:rating,:release_date,:description)
-        # puts new_movie
-        @movie = Movie.create!(new_movie)
-        
-        flash[:notice] = "#{@movie.title} was successfully created."
-        redirect_to movie_path(@movie)
+        @movie = Movie.new(new_movie)
+
+        if @movie.save
+            flash[:notice] = "#{@movie.title} was successfully created."
+            redirect_to movie_path(@movie)
+        else 
+            render 'new'
+        end
     end
     
     def edit
@@ -33,10 +37,12 @@ class MoviesController < ApplicationController
       
     def update
         @movie = Movie.find(params[:id])
-        # params.require(:movie)
-        @movie.update!(params[:movie].permit(:title,:rating,:release_date,:description))
-        flash[:notice] = "#{@movie.title} was successfully updated."
-        redirect_to movie_path(@movie)
+        if @movie.update!(params[:movie].permit(:title,:rating,:release_date,:description) )
+            flash[:notice] = "#{@movie.title} was successfully updated."
+            redirect_to movie_path(@movie)
+        else 
+            render 'edit'
+        end
     end
 
     def destroy
@@ -46,8 +52,4 @@ class MoviesController < ApplicationController
         redirect_to movies_path
     end
 
-    # private
-    # def movies_params
-    #     params[:movie].permit(:title,:rating,:release_date)
-    # end
 end
