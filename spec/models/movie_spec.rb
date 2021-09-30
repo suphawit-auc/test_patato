@@ -1,10 +1,21 @@
 require 'rails_helper.rb'
 
 describe Movie do
-	fixtures :movies
-	it 'includes rating and year in full name' do
-		# 'build' creates but doesn't save object; 'create' also save it
-		movie = FactoryGirl.build(:movie, :title => 'Milk', :rating => 'R')
-		expect(movie.name_with_rating).to eq('Milk (R)')
+	describe 'searching Tmdb by keyword' do
+		context 'with valid API key' do
+			it 'calls Tmdb with title keywords' do
+			expect(Tmdb::Movie).to receive(:find).with('Inception')
+			Movie.find_in_tmdb('Inception')
+			end
+		end
+		context 'with invalid API key' do
+			before(:each) do
+				allow(Tmdb::Movie).to receive(:find).and_raise(Tmdb::InvalidKeyError)
+			end
+			it 'raises an InvalidKeyError' do
+				expect {Movie.find_in_tmdb('Inception')}.to raise_error(Tmdb::InvalidKeyError)	
+			end
+		end	
 	end
+
 end
