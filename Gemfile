@@ -37,8 +37,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   gem 'dotenv-rails'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
@@ -65,5 +63,5 @@ group :development, :test do
  gem 'launchy' # a useful debugging aid for user stories 
  gem 'rspec-rails' 
  gem 'guard-rspec'
- gem 'factory_girl_rails'
+ gem 'factory_bot'
 end
