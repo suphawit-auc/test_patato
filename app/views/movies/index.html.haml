@@ -1,11 +1,4 @@
-%table
-    %thead
-        %tr
-            %th
-                %h1 All Movies  
-            %th 
-                %h3 #{link_to 'Add New movie' , new_movie_path(), style: "text-align: right"  }
-
+%h1 All Movies  
 
 %table#movies
     %thead
@@ -23,4 +16,5 @@
             %td= movie.rating
             %td= movie.release_date
             %td= link_to "More about #{movie.title}", movie_path(movie)
+%h3 #{link_to 'Add New movie' , new_movie_path(), style: "text-align: right"  }
 
