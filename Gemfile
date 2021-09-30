@@ -65,4 +65,5 @@ group :development, :test do
  gem 'launchy' # a useful debugging aid for user stories 
  gem 'rspec-rails' 
  gem 'guard-rspec'
+ gem 'factory_girl_rails'
 end
