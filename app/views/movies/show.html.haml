@@ -15,9 +15,19 @@
 %p#description= @movie.description
 %div 
 %br
-%h3 Review:
--#%p#review
--#= link_to 'Edit info', edit_movie_path(@movie)
+%h3#description Review:
+%table#review
+  %thead
+    %tr
+      %th Moviegoer
+      %th Potato
+      %th Comment
+  %tbody
+    -@movie.reviews.each do |item|
+      %tr 
+        %td= item.moviegoer.name
+        %td= item.potatoes
+
 %div 
 %br
 = link_to 'Back to movie list', movies_path()

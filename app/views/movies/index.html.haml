@@ -1,4 +1,4 @@
-%h1 All Movies  
+%h1 All Movies 
 
 %table#movies
     %thead
@@ -10,11 +10,11 @@
             %th More Info
     %tbody
         -@movies.each_with_index do |movie,index|
-            %tr
-            %td= index+1
-            %td= movie.title 
-            %td= movie.rating
-            %td= movie.release_date
-            %td= link_to "More about #{movie.title}", movie_path(movie)
-%h3 #{link_to 'Add New movie' , new_movie_path(), style: "text-align: right"  }
+            %tr#hover
+                %td= index+1  #{style: "text-align: center"}
+                %td= movie.title 
+                %td= movie.rating
+                %td= movie.release_date
+                %td= link_to "More about #{movie.title}", movie_path(movie)
+%h3 #{link_to 'Add New movie' , new_movie_path(), style:"text-align: right"  }
 

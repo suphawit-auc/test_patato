@@ -68,7 +68,7 @@ html, body {
     text-decoration: none;
     font-size: xx-large;
   }
-  tr:hover {
+  tr:hover#hover {
     background-color: yellow;
   }
   li#details {

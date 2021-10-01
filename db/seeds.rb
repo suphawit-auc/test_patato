@@ -1,6 +1,6 @@
 # Seed the RottenPotatoes DB with some movies.
 more_movies = [
-  {:title => 'Aladdin', :rating => 'G',
+  {:title => 'Aladdin', :rating => 'G',:detail => 'A kind-hearted street urchin and a power-hungry Grand Vizier vie for a magic lamp that has the power to make their deepest wishes come true.'
     :release_date => '25-Nov-1992'},
   {:title => 'When Harry Met Sally', :rating => 'R',
     :release_date => '21-Jul-1989'},
