@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
       # by using the << method on the association.  We could also
       # set it manually with review.moviegoer = @current_user.
       # params.permit!
-      @current_user.reviews << @movie.reviews.build(params[:review].permit!)
+      @current_user.reviews << @movie.reviews.build(params[:review].permit(:potatoes , :comments))
       redirect_to movie_path(@movie)
     end
 

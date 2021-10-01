@@ -11,10 +11,13 @@
     %tbody
         -@movies.each_with_index do |movie,index|
             %tr#hover
-                %td= index+1  #{style: "text-align: center"}
+                %td{:style=>"text-align:center"}= index+1  
                 %td= movie.title 
                 %td= movie.rating
                 %td= movie.release_date
                 %td= link_to "More about #{movie.title}", movie_path(movie)
 %h3 #{link_to 'Add New movie' , new_movie_path(), style:"text-align: right"  }
+%h2 Add from TMDb
+-#= text_area
+
 
