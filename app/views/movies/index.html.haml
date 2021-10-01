@@ -17,7 +17,11 @@
                 %td= movie.release_date.strftime("%F")
                 %td= link_to "More about #{movie.title}", movie_path(movie)
 %h3 #{link_to 'Add New movie' , new_movie_path(), style:"text-align: right"  }
-%h2 Add from TMDb
--#= text_area
+%h1 Search TMDb for a movie
+
+= form_tag :action => 'search_tmdb' do
+    %label{:for => 'search_terms'} Search Terms
+    = text_field_tag 'search_terms'
+    = submit_tag 'Search TMDb'
 
 

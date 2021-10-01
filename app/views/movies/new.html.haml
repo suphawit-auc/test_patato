@@ -1,9 +1,9 @@
 %h2 Create New Movie
 %div
 = form_tag '/movies', :method => :post do
-  
-  = submit_tag 'Save Changes'
+  = render :partial => 'movie_form'
+  = submit_tag 'Create Movie'
 
-%br
+%brs
 %div
 = link_to 'Cancel', movies_path()

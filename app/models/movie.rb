@@ -30,5 +30,7 @@ class Movie < ActiveRecord::Base
       release_date && release_date < @@grandfathered_date
     end
 
+    def self.find_in_tmdb(string)
+    end
     
 end
