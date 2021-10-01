@@ -1,10 +1,8 @@
 %h1 New Review for #{@movie.title}
 
 = form_tag movie_reviews_path(@movie) do
-  = label :review, :potatoes, 'Potatoes'
-  = select :review, :potatoes, options_for_select(1..5)
-  = label :review, :comments ,"Comment"
-  = text_area :review , :comments
+  = render :partial => 'editR_form'
+
   %div
   %br
   = submit_tag 'Create review'

@@ -21,7 +21,7 @@ html, body {
   }
   h1 {
     color: maroon;
-    font-size: 150%;
+    font-size: 175%;
     /*font-style: italic;*/
     display: block;
     width: 100%;
@@ -35,6 +35,12 @@ html, body {
     border-bottom: 4px solid gold;
     font-size: 2em;
     font-style: normal;
+  }
+  h1#header{
+    text-align:left
+  }
+  table#application{ /* set app to full size */
+    width: 100%;
   }
   table#movies {
     margin: 10px;
@@ -50,6 +56,7 @@ html, body {
   table#movies th, table#movies td {
     padding: 4px;
     text-align: left;
+    
   }
   #notice, #warning {
     background: rosybrown;
@@ -67,6 +74,7 @@ html, body {
     color: red;
     text-decoration: none;
     font-size: xx-large;
+    text-align: left;
   }
   tr:hover#hover {
     background-color: yellow;

@@ -1,20 +1,9 @@
 %h2 Edit Review
 
 = form_tag movie_review_path(@movie,@review), :method => :put do
-    = label :review, :potatoes, 'Potatoes'
-    = select :review, :potatoes, options_for_select(1..5)
-
-    -# = label :movie, :rating, 'Rating'
-    -# = select :movie, :rating, Movie.all_ratings
-
-    -# = label :movie, :release_date , 'Released On'
-    -# = date_select :movie, :release_date , :order => [:day, :month, :year]  , :start_year => 1930 
-
-    = label :review, :comments ,"Comment"
-    = text_area :review , :comments
+    =render :partial => 'editR_form'
     %br
     = submit_tag 'Save Changes'
-
 %br
 %div
 = link_to 'Cancel', movie_path(@movie)

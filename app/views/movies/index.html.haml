@@ -1,4 +1,4 @@
-%h1 All Movies 
+%h1#header All Movies 
 
 %table#movies
     %thead
@@ -13,8 +13,8 @@
             %tr#hover
                 %td{:style=>"text-align:center"}= index+1  
                 %td= movie.title 
-                %td= movie.rating
-                %td= movie.release_date
+                %td= movie.rating 
+                %td= movie.release_date.strftime("%F")
                 %td= link_to "More about #{movie.title}", movie_path(movie)
 %h3 #{link_to 'Add New movie' , new_movie_path(), style:"text-align: right"  }
 %h2 Add from TMDb
