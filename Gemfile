@@ -37,6 +37,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -64,5 +65,7 @@ group :development, :test do
  gem 'rspec-rails' 
  gem 'guard-rspec'
  gem 'factory_bot'
+ gem 'factory_girl_rails'
  gem 'themoviedb'
+
 end
